@@ -2,6 +2,7 @@ import { Search } from "lucide-react";
 import { fetchJobs } from "@/lib/fetchJobs";
 import JobListing from "@/components/JobListing";
 import { Job } from "@/types/job";
+import Input from "@/components/Input";
 
 export async function getStaticProps() {
   const jobs = await fetchJobs();
@@ -21,10 +22,10 @@ export default function Jobs({ jobs }: { jobs: Job[] }) {
 
           <div className="relative max-w-md">
             <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 w-5 h-5" />
-            <input
-              type="text"
-              placeholder="Search jobs..."
-              className="w-full pl-10 pr-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+            <Input
+              className={
+                "w-full pl-10 pr-4 py-3 border border-gray rounded-lg focus:outline-none focus:ring-2 focus:ring-blue"
+              }
             />
           </div>
         </div>

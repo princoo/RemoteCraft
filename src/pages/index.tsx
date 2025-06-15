@@ -5,6 +5,7 @@ import { fetchJobs } from "@/lib/fetchJobs";
 import JobListing from "@/components/JobListing";
 import { Job } from "@/types/job";
 import Input from "@/components/Input";
+import Button from "@/components/Button";
 export async function getStaticProps() {
   const jobs = await fetchJobs();
 
@@ -41,10 +42,8 @@ export default function Home({ jobs }: { jobs: Job[] }) {
               <div className="w-full max-w-2xl">
                 <div className="relative">
                   <Search className="absolute left-4 top-1/2 transform -translate-y-1/2 text-gray-400 w-5 h-5" />
-                  <Input />
-                  <button className="absolute right-0 top-0 bottom-0 bg-blue hover:bg-blue/50 text-white px-8 rounded-r-lg font-semibold transition-colors">
-                    Search
-                  </button>
+                  <Input className={"w-full pl-12 pr-4 py-4 bg-white text-lg border border-gray rounded-lg focus:outline-none focus:ring-2 focus:ring-blue"}/>
+                  <Button variant="primary" size="large" className="absolute right-0 top-0 bottom-0">Search</Button>
                 </div>
               </div>
             </div>

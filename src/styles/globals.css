@@ -3,7 +3,7 @@
 :root {
   --background: #ffffff;
   --foreground: #171717;
-  --Gray: #F0F2F5;
+  --Gray: #B5B3AD;
   --Blue: #1A80E5;
   --font-base: 'Work Sans', sans-serif;
 }
@@ -14,7 +14,7 @@
   --font-sans: var(--font-base);
   --font-mono: var(--font-geist-mono);
   --color-gray: var(--Gray);
-  --color-blue: var(--Blue);
+  --color-blue:var(--Blue);
 }
 
 @media (prefers-color-scheme: dark) {

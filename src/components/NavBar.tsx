@@ -1,9 +1,10 @@
 import Link from "next/link";
 import { Search, Bookmark, Settings } from "lucide-react";
+import Input from "./Input";
 
 export default function Navbar() {
   return (
-    <nav className="bg-white border-b border-gray-200 px-4 py-3">
+    <nav className="bg-white border-b border-gray px-4 py-3">
       <div className="max-w-7xl mx-auto flex items-center justify-between">
         {/* Logo and Navigation */}
         <div className="flex items-center space-x-8">
@@ -26,16 +27,10 @@ export default function Navbar() {
             <Link href="/jobs" className="text-gray-600 hover:text-gray-900">
               Jobs
             </Link>
-            <Link
-              href="/"
-              className="text-gray-600 hover:text-gray-900"
-            >
+            <Link href="/" className="text-gray-600 hover:text-gray-900">
               Post a Job
             </Link>
-            <Link
-              href="/"
-              className="text-gray-600 hover:text-gray-900"
-            >
+            <Link href="/" className="text-gray-600 hover:text-gray-900">
               Companies
             </Link>
           </div>
@@ -44,11 +39,11 @@ export default function Navbar() {
         {/* Search Bar */}
         <div className="hidden md:flex items-center flex-1 max-w-md mx-8">
           <div className="relative w-full">
-            <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 w-4 h-4" />
-            <input
-              type="text"
-              placeholder="Search"
-              className="w-full pl-10 pr-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+            <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray w-4 h-4" />
+            <Input
+              className={
+                "w-full pl-10 pr-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue focus:border-transparent"
+              }
             />
           </div>
         </div>

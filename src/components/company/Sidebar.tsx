@@ -1,3 +1,5 @@
+import Button from "../Button";
+
 export default function Sidebar() {
   const jobCategories = [
     { name: "All jobs", active: true },
@@ -13,10 +15,10 @@ export default function Sidebar() {
           {jobCategories.map((category, index) => (
             <button
               key={index}
-              className={`w-full text-left px-3 py-2 rounded-md text-sm font-medium transition-colors ${
+              className={`w-full cursor-pointer text-left px-3 py-2 rounded-md text-sm font-medium ${
                 category.active
-                  ? "bg-gray-100 text-gray-900"
-                  : "text-gray-600 hover:text-gray-900 hover:bg-gray-50"
+                  ? "bg-gray/30"
+                  : "text-black/50 hover:text-black/80 hover:bg-gray/10"
               }`}
             >
               {category.name}
@@ -25,9 +27,9 @@ export default function Sidebar() {
         </nav>
       </div>
 
-      <button className="w-full bg-blue-500 hover:bg-blue-600 text-white px-4 py-3 rounded-lg font-semibold transition-colors">
+      <Button variant="primary" size="large" className="w-full">
         Post a job
-      </button>
+      </Button>
     </aside>
   );
 }
