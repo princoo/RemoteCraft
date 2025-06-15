@@ -33,6 +33,9 @@ export async function getStaticProps({ params }: { params: { slug: string } }) {
 }
 
 export default function JobDetail({ job }: { job: Job }) {
+  if (!job) {
+    return <p>Job not found</p>; // For fallback rendering or development
+  }
   return (
     <main className="min-h-screen bg-white">
       <div className="max-w-4xl mx-auto px-4 py-8">
