@@ -5,6 +5,7 @@
   --foreground: #171717;
   --Gray: #B5B3AD;
   --Blue: #1A80E5;
+  --gray-hover:#1A80E5
   --font-base: 'Work Sans', sans-serif;
 }
 
@@ -15,6 +16,7 @@
   --font-mono: var(--font-geist-mono);
   --color-gray: var(--Gray);
   --color-blue:var(--Blue);
+  --color-grayHover:var(--gray-hover);
 }
 
 @media (prefers-color-scheme: dark) {

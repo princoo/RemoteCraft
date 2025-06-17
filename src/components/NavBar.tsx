@@ -2,11 +2,28 @@ import Link from "next/link";
 import { Search, Bookmark, Settings } from "lucide-react";
 import Input from "./Input";
 
+const navLinks = [
+  {
+    name: "Home",
+    href: "/",
+  },
+  {
+    name: "Jobs",
+    href: "/jobs",
+  },
+  {
+    name: "Post a Job",
+    href: "/",
+  },
+  {
+    name: "Companies",
+    href: "/",
+  },
+];
 export default function Navbar() {
   return (
     <nav className="bg-white border-b border-gray px-4 py-3">
       <div className="max-w-7xl mx-auto flex items-center justify-between">
-        {/* Logo and Navigation */}
         <div className="flex items-center space-x-8">
           <Link href="/" className="flex items-center space-x-2">
             <div className="w-6 h-6 bg-gray-800 rounded-sm flex items-center justify-center">
@@ -18,37 +35,25 @@ export default function Navbar() {
           </Link>
 
           <div className="hidden md:flex items-center space-x-6">
-            <Link
-              href="/"
-              className="text-gray-900 font-medium hover:text-gray-700"
-            >
-              Home
-            </Link>
-            <Link href="/jobs" className="text-gray-600 hover:text-gray-900">
-              Jobs
-            </Link>
-            <Link href="/" className="text-gray-600 hover:text-gray-900">
-              Post a Job
-            </Link>
-            <Link href="/" className="text-gray-600 hover:text-gray-900">
-              Companies
-            </Link>
+            {navLinks.map((link) => (
+              <Link
+                key={link.name}
+                href={link.href}
+                className="font-medium text-black hover:text-gray"
+              >
+                {link.name}
+              </Link>
+            ))}
           </div>
         </div>
 
-        {/* Search Bar */}
         <div className="hidden md:flex items-center flex-1 max-w-md mx-8">
           <div className="relative w-full">
             <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray w-4 h-4" />
-            <Input
-              className={
-                "w-full pl-10 pr-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue focus:border-transparent"
-              }
-            />
+            <Input className="w-full pl-10 pr-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue focus:border-transparent" />
           </div>
         </div>
 
-        {/* Right Icons */}
         <div className="flex items-center space-x-3">
           <button className="p-2 text-gray-600 hover:text-gray-900">
             <Bookmark className="w-5 h-5" />

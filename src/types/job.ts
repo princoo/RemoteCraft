@@ -19,3 +19,7 @@ export interface APIResponse {
   "total-job-count": number;
   jobs: Job[];
 }
+
+export interface SlugPath {
+  params: { slug: string };
+}

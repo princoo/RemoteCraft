@@ -9,3 +9,8 @@ export interface Company {
   openRoles: Job[]
   jobCount: number
 }
+
+export interface CompanyProfileProps {
+  companyJobs: Job[];
+  error: string;
+}

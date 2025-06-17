@@ -1,6 +1,5 @@
-import React from "react";
 
-export default function ErroAlert({ error }: { error: string }) {
+export default function ErrorAlert({ error }: { error: string }) {
   return (
     <div className="max-w-5xl mx-auto px-4 md:px-8">
       <div className="flex justify-between p-4 rounded-md bg-red-50 border border-red-300">
